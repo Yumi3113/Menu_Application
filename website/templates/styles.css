@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.wapper {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.img-burger {
+    width: 300px;
+}

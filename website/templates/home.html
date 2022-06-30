@@ -1,3 +1,18 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content %}
-<h1>This is the home page</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tutorial</title>
+        <link rel="stylesheet" herf="style.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>Home page</h1>
+            <a href="/item/1">
+            <img class="img-burger" src="{{ url_for('static', filename='img/burger.jpg') }}" alt="burger">
+        </a>
+        </div>
+    </body>
+</html>
 {% endblock %}
