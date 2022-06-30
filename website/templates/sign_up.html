@@ -1,5 +1,5 @@
 {% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block content %}
-<form method="POST">
+<form method="POST" action="/sign_up">
     <h3 align="center">Sign Up</h3>
     <div class="form-group">
         <label for="email">Email Address</label>
@@ -17,7 +17,7 @@
             type="text"
             class="form-control"
             id="firstName"
-            name="email"
+            name="firstName"
             placeholder="Enter first name"
         />
     </div>
