@@ -5,10 +5,19 @@
         <meta charset="utf-8">
         <title>Tutorial</title>
         <link rel="stylesheet" herf="style.css">
+        <style>
+        .center-text{ 
+            color:#201f2b;
+            font-family:garamond;
+        text-align: center;
+        }
+        </style>
     </head>
     <body>
         <div class="wrapper">
-            <h1>Home page</h1>
+            <h1 class = "center-text">Home page</h1>
+            <p1 class ="center-text">Hello</p1>
+            <br>
             <a href="/item/1">
             <img class="img-burger" src="{{ url_for('static', filename='img/burger.jpg') }}" alt="burger">
         </a>
