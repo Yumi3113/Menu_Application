@@ -1,27 +1,24 @@
-{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Tutorial</title>
-        <link rel="stylesheet" herf="style.css">
-        <style>
-        .center-text{ 
-            color:#201f2b;
-            font-family:garamond;
-        text-align: center;
-        }
-        </style>
-    </head>
-    <body>
-        <div class="wrapper">
+{% extends "base.html" %} {% block title %}Home{% endblock %}
+ {% block content %}
+
+ {%  for item in menu %}
+ <p>{{item[2]}}</p>
+{% endfor %}
             <h1 class = "center-text">Home page</h1>
-            <p1 class ="center-text">Hello</p1>
+            <p1 class ="center-text">Order items</p1>
             <br>
+        <div class="container">
+            <img src="{{ url_for('static', filename='img/'+item[2]) }}" alt="burger" class="image" style="width:100%">
             <a href="/item/1">
-            <img class="img-burger" src="{{ url_for('static', filename='img/burger.jpg') }}" alt="burger">
-        </a>
+            </a>
+            <div class="middle">
+            <div class="text">
+                <p>Order</p></div>
+            </div>
+            </div>
         </div>
-    </body>
-</html>
+  
+
+
+
 {% endblock %}
