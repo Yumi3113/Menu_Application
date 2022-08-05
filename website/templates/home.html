@@ -1,24 +1,18 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %}
- {% block content %}
+{% block content %}
 
- {%  for item in menu %}
- <p>{{item[2]}}</p>
+<h1 class="center-text">Home page</h1>
+<p1 class="center-text">Order items</p1>
+<br>
+{% for item in menu %}
+<div class="container">
+    <a href="/item/{{ item[0]}}">
+    <img src="{{ url_for('static', filename='img/'+item[2]) }}" alt="menu_item" class="image" style="width:100%">
+    <div class="middle">
+    </a>
+        <div class="text">order</div>
+    </div>
+</div>
+
 {% endfor %}
-            <h1 class = "center-text">Home page</h1>
-            <p1 class ="center-text">Order items</p1>
-            <br>
-        <div class="container">
-            <img src="{{ url_for('static', filename='img/'+item[2]) }}" alt="burger" class="image" style="width:100%">
-            <a href="/item/1">
-            </a>
-            <div class="middle">
-            <div class="text">
-                <p>Order</p></div>
-            </div>
-            </div>
-        </div>
-  
-
-
-
 {% endblock %}

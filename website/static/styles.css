@@ -1,24 +1,8 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-.wapper {
-    margin: 0 auto;
-    width: 1000px;
-}
-
-.img-burger {
-    width: 300px;
-
-}
-
-
 
 body{
   font-family:garamond;
   background-color: red;
 }
-
 
 .container {
   position: relative;
@@ -28,8 +12,8 @@ body{
 .image {
   opacity: 1;
   display: block;
-  width: 100%;
-  height: auto;
+  width: 100px;
+  height: 100px;
   transition: .5s ease;
   backface-visibility: hidden;
 }
