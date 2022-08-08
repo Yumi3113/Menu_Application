@@ -1,7 +1,7 @@
 
 body{
   font-family:garamond;
-  background-color: red;
+  background-color: white;
 }
 
 .container {
@@ -13,7 +13,7 @@ body{
   opacity: 1;
   display: block;
   width: 100px;
-  height: 100px;
+  height: 500px;
   transition: .5s ease;
   backface-visibility: hidden;
 }
@@ -38,7 +38,7 @@ body{
 }
 
 .text {
-  background-color: #b8a39f;
+  background-color: #c7b2ae;
   color: white;
   font-size: 16px;
   padding: 16px 32px;

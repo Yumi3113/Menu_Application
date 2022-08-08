@@ -6,11 +6,9 @@
 <br>
 {% for item in menu %}
 <div class="container">
-    <a href="/item/{{ item[0]}}">
     <img src="{{ url_for('static', filename='img/'+item[2]) }}" alt="menu_item" class="image" style="width:100%">
     <div class="middle">
-    </a>
-        <div class="text">order</div>
+        <a class="text" href="/item/{{ item[0]}}"></a>
     </div>
 </div>
 
