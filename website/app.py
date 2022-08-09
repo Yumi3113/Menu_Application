@@ -1,3 +1,4 @@
+from pickle import TRUE
 from flask import Flask, render_template, request, flash, redirect, url_for, session, g
 from werkzeug.security import generate_password_hash, check_password_hash
 from os import path
@@ -113,8 +114,9 @@ def home():
 
 @app.route('/item/<int:id>')
 def item(id):
-    
-    return f"this is the item page for id {id}"
+    sql = "SELECT * FROM item WHERE id = ?;"
+    item = query_db(sql, args=(id,), one=True)
+    return render_template("item.html", item=item)
 
 if __name__ == '__main__':
     app.run(debug=True)
