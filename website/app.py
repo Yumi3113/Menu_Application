@@ -106,11 +106,11 @@ def sign_up():
     return render_template("sign_up.html")
 
 @app.route('/')
-def home():
+def menu():
     #connect and query
     sql = "SELECT * FROM item"
     menu = query_db(sql)
-    return render_template("home.html", menu=menu)
+    return render_template("menu.html", menu=menu)
 
 @app.route('/item/<int:id>')
 def item(id):

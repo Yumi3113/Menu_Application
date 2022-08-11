@@ -1,15 +1,16 @@
-{% extends "base.html" %} {% block title %}Home{% endblock %}
+{% extends "base.html" %} {% block title %}Menu{% endblock %}
 {% block content %}
 
-<h1 class="center-text">Home page</h1>
-<p1 class="center-text">Order items</p1>
+<h2 class="center-text">Menu items</h2>
 <br>
 {% for item in menu %}
 <div class="container">
     <img src="{{ url_for('static', filename='img/'+item[2]) }}" alt="menu_item" class="image" style="width:100%">
     <div class="middle">
         <!-- <button type="button" onclick="alert('To Save Orders Please Login')">Order</button> -->
-        <a class="text" href="/item/{{ item[0]}}"></a>
+        <a href="/item/{{ item[0]}}">
+        <button class="button"><span>Order</span></button>
+    </a>
     </div>
 </div>
 
