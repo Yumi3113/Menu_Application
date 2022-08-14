@@ -6,14 +6,16 @@ body{
 
 .container {
   position: relative;
-  width: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: scale-down;
 }
 
 .image {
   opacity: 1;
   display: block;
   width: 100px;
-  height: 500px;
+  height: 100px;
   transition: .5s ease;
   backface-visibility: hidden;
 }
