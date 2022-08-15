@@ -4,7 +4,7 @@
 <br>
 {% for item in menu %}
 <div class="container">
-    <img src="{{ url_for('static', filename='img/'+item[2]) }}" alt="menu_item" class="image" style="width:100%">
+    <img src="{{ url_for('static', filename='img/'+item[2]) }}" alt="menu_item" class="image">
     <div class="middle">
         <a href="/item/{{ item[0]}}">
         <button class="button"><span>Order</span></button>
@@ -12,16 +12,14 @@
     </div>
 </div>
 
-<br>
-
- <div class="w3-center w3-padding-32">
-    <div class="w3-bar">
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-    </div>
+<!-- 
+<div class="w3-center w3-paddsding-32">
+  <div class="w3-bar">
+    <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+    <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+    <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
   </div>
-
+</div> -->
 <!-- <br>
     onclick="alert('To Save Orders Please Login')"
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">

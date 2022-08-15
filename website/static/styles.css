@@ -13,10 +13,11 @@ body{
 .image {
   opacity: 1;
   display: block;
-  width: 50px;
+  width: 220px;
   height: 200px;
   transition: .5s ease;
   backface-visibility: hidden;
+  margin:1rem;
 }
 
 .middle {
@@ -27,7 +28,6 @@ body{
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  text-align: center;
 }
 
 .container:hover .image {
