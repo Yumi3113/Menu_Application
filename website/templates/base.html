@@ -33,11 +33,13 @@
         <div class="navbar-nav">
           {% if session["user_id"] %}
             <a class="nav-item nav-link" id="menu" href="/">Menu</a>
+            <a class="nav-item nav-link" id="menu" href="/cart">Cart</a>
             <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
           {% else %}
             <a class="nav-item nav-link" id="login" href="/login">Login</a>
             <a class="nav-item nav-link" id="signUp" href="/sign_up">Sign Up</a>
             <a class="nav-item nav-link" id="menu" href="/">Menu</a>
+            <a class="nav-item nav-link" id="menu" href="/cart">Cart</a>
           {% endif %}
         </div>
       </div>

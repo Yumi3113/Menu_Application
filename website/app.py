@@ -118,6 +118,12 @@ def item(id):
     item = query_db(sql, args=(id,), one=True)
     return render_template("item.html", item=item)
 
+@app.route('/cart')
+def cart():
+    sql = "SELECT * FROM item"
+    menu = query_db(sql)
+    return render_template("cart.html")
+
 # @app.route('/add')
 # def add():
 #     cursor = get_db().cursor()
