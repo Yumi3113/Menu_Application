@@ -118,5 +118,13 @@ def item(id):
     item = query_db(sql, args=(id,), one=True)
     return render_template("item.html", item=item)
 
+# @app.route('/add')
+# def add():
+#     cursor = get_db().cursor()
+#     sql = "INSERT INTO cart"
+#     cursor.execute(sql)
+#     results = cursor.fetchall()
+#     return render_template("cart.html", results=results)
+
 if __name__ == '__main__':
     app.run(debug=True)
