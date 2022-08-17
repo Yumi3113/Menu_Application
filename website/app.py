@@ -75,7 +75,7 @@ def sign_up():
         )
 
         if existing_user:
-            flash('Email already exists.',category='error')
+            flash('Email already exists, Please',category='error')
         elif len(email) < 4:
             flash('Email must be greater than 3 characters.', category='error')
         elif len(first_name) < 2:
@@ -101,7 +101,7 @@ def sign_up():
             )
             session["user_id"] = user[0]
             flash('Account created', category='success')
-            return redirect(url_for('home'))
+            return redirect(url_for('menu'))
 
     return render_template("sign_up.html")
 
