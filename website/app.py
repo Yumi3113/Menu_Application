@@ -105,7 +105,7 @@ def sign_up():
 
     return render_template("sign_up.html")
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def menu():
     #connect and query
     sql = "SELECT * FROM item"
@@ -123,6 +123,22 @@ def cart():
     sql = "SELECT * FROM item"
     menu = query_db(sql)
     return render_template("cart.html")
+
+def get_db():
+    db = getattr(g, '_database', None)
+    if db is None:
+        db = g._database = sqlite3.connect(DATABASE)
+        return db
+
+@app.route("/add", methods=["GET","POST"])
+def add():
+    if request.method =="POST":
+        cursor = get_db().cursor()
+        button = int(request.form["item"])
+        insert = "INSERT INTO order_item (item_id) VALUES (?)"
+        cursor.execute(insert,(button,))
+        get_db().commit()
+    return redirect('/')
 
 # @app.route('/add')
 # def add():

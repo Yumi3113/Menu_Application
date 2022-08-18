@@ -38,14 +38,14 @@ body{
   opacity: 1;
 }
   .button {
-    border-radius: 4px;
+    border-radius: 3px;
     background-color: #c0998d;
     border: none;
     color: #FFFFFF;
     text-align: center;
-    font-size: 28px;
+    font-size: 20px;
     padding: 20px;
-    width: 200px;
+    width: 100px;
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
