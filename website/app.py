@@ -41,8 +41,8 @@ def login():
                 flash('Logged in successfully!', category='success')
                 # store the id of the logged in user
                 session["user_id"] = user[0]
-                # user now logged in redirect home
-                return redirect(url_for('home'))
+                # user now logged in redirect menu
+                return redirect(url_for('/'))
             else:
                 # password was inocrrect
                 flash('Incorrect password, try again.', category='error')
