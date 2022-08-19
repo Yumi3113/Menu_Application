@@ -45,7 +45,7 @@ body{
     text-align: center;
     font-size: 20px;
     padding: 20px;
-    width: 100px;
+    width: 200px;
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
@@ -80,4 +80,39 @@ body{
   color:#201f2b;
   font-family:garamond;
 text-align: center;
+}
+
+.item {
+  background: #edeef0;
+  display:flex;
+  width: 80%;
+  margin:auto;
+  box-shadow: 0px 4px 8px 10px #e8e6e6;
+}
+
+.item img{
+  width: 40%;
+}
+
+.description {
+  margin: 1rem;
+}
+
+.add_button {
+  background-color: #bba389;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.add_button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }

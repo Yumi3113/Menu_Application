@@ -1,6 +1,13 @@
 {% extends "base.html" %} {% block title %}item{% endblock %}
 {% block content %}
 <h1>item page</h1>
-<h1>{{item}}</h1>
-
+<br>
+<div class='item'>
+    <img src="{{ url_for('static', filename='img/'+item[2]) }}" alt="menu_item">
+   <div class='description'>
+       <h1>{{item[1]}}</h1>
+       <p>{{item[3]}}</p>
+        <button class="add_button add_button2">Add To Cart</button>
+        <form></form>
+   </div>
 {% endblock %}

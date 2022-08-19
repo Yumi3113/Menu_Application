@@ -5,7 +5,7 @@ from os import path
 import sqlite3
 
 app = Flask(__name__)
-DATABASE = "website/database.db"
+DATABASE = "database.db"
 app.config['SECRET_KEY'] = 'key'
 
 def query_db(query, args=(), one=False, commit=False):
