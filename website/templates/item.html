@@ -7,7 +7,9 @@
    <div class='description'>
        <h1>{{item[1]}}</h1>
        <p>{{item[3]}}</p>
+       <form action="/add_to_cart" method="post">
+           <input type="hidden" name="item_id" value={{item[0]}}>
         <button class="add_button add_button2">Add To Cart</button>
-        <form></form>
+    </form>
    </div>
 {% endblock %}

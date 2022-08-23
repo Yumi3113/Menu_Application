@@ -41,8 +41,9 @@ def login():
                 flash('Logged in successfully!', category='success')
                 # store the id of the logged in user
                 session["user_id"] = user[0]
+                session["cart"] = []
                 # user now logged in redirect menu
-                return redirect(url_for('/'))
+                return redirect(url_for('menu'))
             else:
                 # password was inocrrect
                 flash('Incorrect password, try again.', category='error')
@@ -100,6 +101,7 @@ def sign_up():
                 one=True
             )
             session["user_id"] = user[0]
+            session["cart"] = []
             flash('Account created', category='success')
             return redirect(url_for('menu'))
 
@@ -120,6 +122,7 @@ def item(id):
 
 @app.route('/cart')
 def cart():
+    print(session["cart"])
     sql = "SELECT * FROM item"
     menu = query_db(sql)
     return render_template("cart.html")
@@ -130,15 +133,24 @@ def get_db():
         db = g._database = sqlite3.connect(DATABASE)
         return db
 
-@app.route("/add", methods=["GET","POST"])
-def add():
-    if request.method =="POST":
-        cursor = get_db().cursor()
-        button = int(request.form["item"])
-        insert = "INSERT INTO order_item (item_id) VALUES (?)"
-        cursor.execute(insert,(button,))
-        get_db().commit()
-    return redirect('/')
+@app.route("/add_to_cart", methods=["POST"])
+def add_to_cart():
+    item_id = request.form.get("item_id")
+    cartlist = session['cart']
+    cartlist.append(item_id)
+    session['cart'] = cartlist
+    print(session["cart"])
+    return redirect("/cart")
+
+# @app.route("/add", methods=["GET","POST"])
+# def add():
+#     if request.method =="POST":
+#         cursor = get_db().cursor()
+#         button = int(request.form["item"])
+#         insert = "INSERT INTO order_item (item_id) VALUES (?)"
+#         cursor.execute(insert,(button,))
+#         get_db().commit()
+#     return redirect('/')
 
 # @app.route('/add')
 # def add():
