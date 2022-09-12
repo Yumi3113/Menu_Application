@@ -109,6 +109,8 @@ def sign_up():
 
 @app.route('/', methods=['GET', 'POST'])
 def menu():
+    if "cart" not in session:
+        session['cart'] = []
     #connect and query
     sql = "SELECT * FROM item"
     menu = query_db(sql)
@@ -123,9 +125,12 @@ def item(id):
 @app.route('/cart')
 def cart():
     print(session["cart"])
-    sql = "SELECT * FROM item"
-    menu = query_db(sql)
-    return render_template("cart.html")
+    cart_name = []
+    for id in session['cart']:
+        sql = "SELECT name, price FROM item WHERE id = ?"
+        item = query_db(sql, args=(id,), one=True)
+        cart_name.append(item)
+    return render_template("cart.html", cart_name=cart_name)
 
 def get_db():
     db = getattr(g, '_database', None)

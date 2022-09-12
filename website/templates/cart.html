@@ -1,6 +1,35 @@
 {% extends "base.html" %} {% block title %}cart{% endblock %}
 {% block content %}
 <h1>Cart</h1>
-<h1>{{session["cart"]}}</h1>
+<table>
+    <thead>
+        <tr>
+            <th>
+                <p>name</p>
+            </th>
+            <th>
+                <p>price</p>
+            </th>
+            <th>
+                <p>delete</p>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in cart_name %}
+        <tr>
+            <th>
+                <p>{{item[0]}}</p>
+            </th>
+            <th>
+                <p>{{item[1]}}</p>
+            </th>
+            <th>
+                <p>delete</p>
+            </th>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 {% endblock %}
