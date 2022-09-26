@@ -1,6 +1,8 @@
 {% extends "base.html" %} {% block title %}cart{% endblock %}
 {% block content %}
 <h1>Cart</h1>
+    <a href="http://127.0.0.1:5000/">
+    <button class="button"><span>Continue Shopping</span></button></a>
 <table>
     <thead>
         <tr>
@@ -16,6 +18,7 @@
         </tr>
     </thead>
     <tbody>
+        {% if cart_name %}
         {% for item in cart_name %}
         <tr>
             <th>
@@ -25,10 +28,14 @@
                 <p>{{item[1]}}</p>
             </th>
             <th>
-                <p>delete</p>
+                <form action="/delete" method ="post">
+                    <input type="hidden" name="id" value="{{item[2]}}">
+                    <input type="submit" value="delete">
+                 </form> 
             </th>
         </tr>
         {% endfor %}
+        {% endif %}
     </tbody>
 </table>
 

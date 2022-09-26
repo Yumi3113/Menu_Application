@@ -127,9 +127,10 @@ def cart():
     print(session["cart"])
     cart_name = []
     for id in session['cart']:
-        sql = "SELECT name, price FROM item WHERE id = ?"
+        sql = "SELECT name, price, id FROM item WHERE id = ?"
         item = query_db(sql, args=(id,), one=True)
         cart_name.append(item)
+    print (cart_name)
     return render_template("cart.html", cart_name=cart_name)
 
 def get_db():
@@ -147,23 +148,16 @@ def add_to_cart():
     print(session["cart"])
     return redirect("/cart")
 
-# @app.route("/add", methods=["GET","POST"])
-# def add():
-#     if request.method =="POST":
-#         cursor = get_db().cursor()
-#         button = int(request.form["item"])
-#         insert = "INSERT INTO order_item (item_id) VALUES (?)"
-#         cursor.execute(insert,(button,))
-#         get_db().commit()
-#     return redirect('/')
-
-# @app.route('/add')
-# def add():
-#     cursor = get_db().cursor()
-#     sql = "INSERT INTO cart"
-#     cursor.execute(sql)
-#     results = cursor.fetchall()
-#     return render_template("cart.html", results=results)
-
+@app.route("/delete", methods=["GET","POST"])
+def add():
+    if request.method =="POST":
+        db=get_db()
+        cursor = db.cursor()
+        object = int(request.form["id"])
+        sql = "delete FROM item WHERE id=?"
+        cursor.execute(sql,(object,))
+        db.commit()
+    return redirect('/cart')
+    
 if __name__ == '__main__':
     app.run(debug=True)
