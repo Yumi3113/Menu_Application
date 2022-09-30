@@ -19,6 +19,7 @@
     </thead>
     <tbody>
         {% if cart_name %}
+        {% set i = 0 %}
         {% for item in cart_name %}
         <tr>
             <th>
@@ -29,11 +30,12 @@
             </th>
             <th>
                 <form action="/delete" method ="post">
-                    <input type="hidden" name="id" value="{{item[2]}}">
+                    <input type="hidden" name="id" value="{{ i }}">
                     <input type="submit" value="delete">
                  </form> 
             </th>
         </tr>
+        {% set i = i + 1%}
         {% endfor %}
         {% endif %}
     </tbody>

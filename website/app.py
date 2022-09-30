@@ -130,7 +130,6 @@ def cart():
         sql = "SELECT name, price, id FROM item WHERE id = ?"
         item = query_db(sql, args=(id,), one=True)
         cart_name.append(item)
-    print (cart_name)
     return render_template("cart.html", cart_name=cart_name)
 
 def get_db():
@@ -145,18 +144,19 @@ def add_to_cart():
     cartlist = session['cart']
     cartlist.append(item_id)
     session['cart'] = cartlist
-    print(session["cart"])
     return redirect("/cart")
 
 @app.route("/delete", methods=["GET","POST"])
-def add():
+def delete():
     if request.method =="POST":
-        db=get_db()
-        cursor = db.cursor()
-        object = int(request.form["id"])
-        sql = "delete FROM item WHERE id=?"
-        cursor.execute(sql,(object,))
-        db.commit()
+        print (session["cart"])
+        id = request.form["id"]
+        data = session["cart"]
+        data.pop(int(id))
+        session['cart'] = data
+        #session["cart"].pop(int(id))
+        print (session["cart"])
+        print (id)
     return redirect('/cart')
     
 if __name__ == '__main__':
