@@ -116,12 +116,14 @@ def menu():
     menu = query_db(sql)
     return render_template("menu.html", menu=menu)
 
+#displays item page by item id
 @app.route('/item/<int:id>')
 def item(id):
     sql = "SELECT * FROM item WHERE id = ?;"
     item = query_db(sql, args=(id,), one=True)
     return render_template("item.html", item=item)
 
+#takes item from database
 @app.route('/cart')
 def cart():
     print(session["cart"])
@@ -130,6 +132,12 @@ def cart():
         sql = "SELECT name, price, id FROM item WHERE id = ?"
         item = query_db(sql, args=(id,), one=True)
         cart_name.append(item)
+
+        #adds up total quantity
+        # cursor = get_db().cursor()
+        # count = "SELECT id, COUNT(*) as quantity FROM item GROUP BY id"
+        # cursor.execute(count)
+        # count = cursor.fetchall()
     return render_template("cart.html", cart_name=cart_name)
 
 def get_db():
@@ -138,6 +146,7 @@ def get_db():
         db = g._database = sqlite3.connect(DATABASE)
         return db
 
+#adds item to cart
 @app.route("/add_to_cart", methods=["POST"])
 def add_to_cart():
     item_id = request.form.get("item_id")
@@ -146,6 +155,7 @@ def add_to_cart():
     session['cart'] = cartlist
     return redirect("/cart")
 
+#delete items from session lists
 @app.route("/delete", methods=["GET","POST"])
 def delete():
     if request.method =="POST":
