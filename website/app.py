@@ -53,12 +53,13 @@ def login():
 
     return render_template("login.html")
 
-
+#logout
 @app.route('/logout')
 def logout():
     session["user_id"] = None
     return redirect(url_for('login'))
 
+#Sign Up
 @app.route('/sign_up', methods=['GET','POST'])
 def sign_up():
     if request.method == 'POST':
@@ -74,7 +75,7 @@ def sign_up():
             (email, ),
             one=True
         )
-
+        #error messages
         if existing_user:
             flash('Email already exists, Please',category='error')
         elif len(email) < 4:
