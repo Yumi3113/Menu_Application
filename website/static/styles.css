@@ -18,10 +18,8 @@ body{
   transition: .5s ease;
   backface-visibility: hidden;
   margin:1rem;
-}
-
-.image:hover{
-  opacity:0.5
+  margin-right: 1rem;
+  margin-bottom: 1rem;
 }
 
 .middle {
@@ -36,12 +34,17 @@ body{
 }
 
 .container:hover .image {
-  opacity: 0.3;
-}
-
-.container:hover .middle {
   opacity: 1;
 }
+
+.image:hover{
+  opacity:0.5
+}
+
+#t:hover .middle {
+  opacity: 1;
+}
+
   .button {
     border-radius: 3px;
     background-color: #c0998d;

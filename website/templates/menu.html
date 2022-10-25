@@ -3,7 +3,7 @@
 <h2 class="center-text">Menu items</h2>
 <br>
 {% for item in menu %}
-<div class="container">
+<div class="container" id="t">
     <img src="{{ url_for('static', filename='img/'+item[2]) }}" alt="menu_item" class="image">
     <div class="middle">
         <a href="/item/{{ item[0]}}">
