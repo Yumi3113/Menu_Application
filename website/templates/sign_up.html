@@ -1,5 +1,5 @@
 {% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block content %}
-<form method="POST" action=sign_up"/">
+<form method="POST" action="/sign_up">
     <h3 align="center">Sign Up</h3>
     <div class="form-group">
         <label for="email">Email Address</label>
@@ -41,7 +41,7 @@
             placeholder="Confirm password"
         />
     </div>
-    <br />
+    <br>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
  {% endblock %}
