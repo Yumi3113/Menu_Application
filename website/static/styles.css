@@ -41,6 +41,28 @@ body{
   opacity: 1;
 }
 
+
+.imagetext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position of the price tag (imagetext) */
+  position: absolute;
+  z-index: 1;
+    bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.imagetext {
+  visibility: visible;
+}
+
   .button {
     border-radius: 3px;
     background-color: #c0998d;

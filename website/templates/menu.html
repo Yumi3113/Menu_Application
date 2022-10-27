@@ -6,6 +6,7 @@
 <div class="container" id="t">
     <img src="{{ url_for('static', filename='img/'+item[2]) }}" alt="menu_item" class="image">
     <div class="middle">
+      <span class="imagetext">price</span>
         <a href="/item/{{ item[0]}}">
         <button class="button"><span>Order</span></button>
     </a>
