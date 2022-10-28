@@ -7,7 +7,6 @@
 /* menu page container */
 .container {
   position: relative;
-  width: 50%;
   height: 50%;
 }
 
@@ -19,9 +18,6 @@
   height: auto;
   transition: .5s ease;
   backface-visibility: hidden;
-  margin:1rem;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
 }
 
 /* Order button animations */
@@ -71,7 +67,7 @@
 /* Button appearance */
   .button {
     border-radius: 3px;
-    background-color: #c0998d;
+    background-color: #beaa80;
     border: none;
     color: #FFFFFF;
     text-align: center;

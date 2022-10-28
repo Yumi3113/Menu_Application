@@ -1,8 +1,9 @@
 {% extends "base.html" %} {% block title %}Menu{% endblock %}
 {% block content %}
-<h2 class="center-text">Menu items</h2>
-<br>
+<h3 class="center-text">Menu items</h3>
+<div class="row">
 {% for item in menu %}
+  < class="column">
 <div class="container" id="t">
     <img src="{{ url_for('static', filename='img/'+item[2]) }}" alt="menu_item" class="image">
     <!-- <span class="imagetext">price</span> -->
@@ -11,7 +12,11 @@
     <button class="button"><span>Order</span></button>
     </a>
     </div>
+  </div>
 </div>
+{% endfor %}
+</div>
+{% endblock %}
 
 <!-- 
 <div class="w3-center w3-paddsding-32">
@@ -30,6 +35,3 @@
     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
     <strong>To Save</strong> Please LoginS
 </div> -->
-
-{% endfor %}
-{% endblock %}
