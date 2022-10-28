@@ -1,8 +1,9 @@
--{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content %}
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content %}
+<div id="login_form">
 <form method="POST">
     <h3 align="center">Login</h3>
     <div class="form-group">
-        <label for="email">Email Address</label>
+        <label for="email">Email Address:</label>
         <input
         type="email"
         class="form-control"
@@ -12,7 +13,7 @@
         />
     </div>
     <div class="form-group">
-        <label for="password">Password</label>
+        <label for="password">Password:</label>
         <input
         type="password"
         class="form-control"
@@ -22,9 +23,10 @@
         />
     </div>
     <br />
-    <button type="submit" class="btn btn-primary">Login</button>
-    <p>You must be signed up to login</p>
+    <button type="submit" class="btn btn-primary">Login:</button>
 </form>
+<br>
 <a href="/sign_up">
     <button class="button"><span>Sign up</span></button></a>
+</div>
 {% endblock %}
