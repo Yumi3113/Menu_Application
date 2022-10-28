@@ -134,11 +134,6 @@ def cart():
         item = query_db(sql, args=(id,), one=True)
         cart_name.append(item)
 
-        #adds up total quantity
-        # cursor = get_db().cursor()
-        # count = "SELECT id, COUNT(*) as quantity FROM item GROUP BY id"
-        # cursor.execute(count)
-        # count = cursor.fetchall()
     return render_template("cart.html", cart_name=cart_name)
 
 def get_db():
@@ -169,6 +164,8 @@ def delete():
         print (session["cart"])
         print (id)
     return redirect('/cart')
+
+#adding a quantity count
     
 if __name__ == '__main__':
     app.run(debug=True)

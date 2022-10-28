@@ -1,15 +1,17 @@
 
-body{
+.body{
   font-family:garamond;
   background-color: white;
 }
 
+/* menu page container */
 .container {
   position: relative;
   width: 50%;
   height: 50%;
 }
 
+/* Menu item image */
 .image {
   opacity: 1;
   display: block;
@@ -22,6 +24,7 @@ body{
   margin-bottom: 1rem;
 }
 
+/* Order button animations */
 .middle {
   transition: .5s ease;
   opacity: 0;
@@ -33,14 +36,17 @@ body{
   text-align: center;
 }
 
+/* button change image opacity  */
 .button:hover+img{
   opacity:0.5
 }
 
+/* Button appears */
 #t:hover .middle {
   opacity: 1;
 }
 
+/* Price tag */
 .imagetext {
   visibility: hidden;
   width: 120px;
@@ -62,6 +68,7 @@ body{
   visibility: visible;
 }
 
+/* Button appearance */
   .button {
     border-radius: 3px;
     background-color: #c0998d;
@@ -80,7 +87,7 @@ body{
     cursor: pointer;
     display: inline-block;
     position: relative;
-    transition: 0.5s;
+    transition: 0.3s;
   }
   
   .button span:after {
@@ -142,6 +149,7 @@ text-align: center;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
+/* table */
 #cart {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -162,3 +170,16 @@ text-align: center;
   background-color: #ece9e3;
   color: rgb(0, 0, 0);
 }
+
+/* quantity count */
+#myform {
+  text-align: center;
+  margin: 1%;
+}
+.qty {
+  width: 40px;
+  height: 25px;
+  text-align: center;
+}
+input.qtyplus { width:25px; height:25px;}
+input.qtyminus { width:25px; height:25px;}
