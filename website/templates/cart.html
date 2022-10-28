@@ -32,7 +32,9 @@
             <th>
                 <form action="/delete" method ="post">
                     <input type="hidden" name="id" value="{{ i }}">
-                    <input type="submit" value="delete">
+                    <div style="text-align: center">
+                    <input class="delete_button" type="submit" value="delete">
+                    </div>
                  </form> 
             </th>
             <th>
@@ -47,8 +49,21 @@
         {% endfor %}
         {% endif %}
     </tbody>
+    <br>
+    <thead id="total">
+        <tr>
+            <th>
+            </th>
+            <th>
+            </th>
+            <th>
+            </th>
+            <th>
+                <p style="text-align:center;">Total:</p>
+            </th>
+        </tr>
+    </thead>
 </table>
-
  <br>
 <a href="http://127.0.0.1:5000/">
 <button class="button"><span>Continue Shopping</span></button></a>

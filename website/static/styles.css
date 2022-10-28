@@ -1,7 +1,7 @@
 
-.body{
+body{
   font-family:garamond;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
 }
 
 /* menu page container */
@@ -15,7 +15,7 @@
   opacity: 1;
   display: block;
   width: 100%;
-  height: auto;
+  height: 200%;
   transition: .5s ease;
   backface-visibility: hidden;
 }
@@ -25,7 +25,7 @@
   transition: .5s ease;
   opacity: 0;
   position: absolute;
-  top: 50%;
+  top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -39,7 +39,7 @@
 
 /* Button appears */
 #t:hover .middle {
-  opacity: 1;
+  opacity: 0.9;
 }
 
 /* Price tag */
@@ -67,16 +67,15 @@
 /* Button appearance */
   .button {
     border-radius: 3px;
-    background-color: #beaa80;
+    background-color: #aca58c;
     border: none;
-    color: #FFFFFF;
+    color: rgb(255, 255, 255);
     text-align: center;
     font-size: 15px;
     padding: 20px;
     width: 100%;
     transition: all 0.5s;
     cursor: pointer;
-    margin: 5px;
   }
   
   .button span {
@@ -111,7 +110,7 @@ text-align: center;
 }
 
 .item {
-  background: #edeef0;
+  background: #c2c7cf;
   display:flex;
   width: 80%;
   margin:auto;
@@ -127,7 +126,7 @@ text-align: center;
 }
 
 .add_button {
-  background-color: #bba389;
+  background-color: #9299a5;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -157,7 +156,9 @@ text-align: center;
   padding: 8px;
 }
 
-#cart th:hover {background-color:#ddd; }
+#cart th:hover {
+  background-color:#ddd; 
+}
 
 #cart th {
   padding-top: 12px;
@@ -165,6 +166,35 @@ text-align: center;
   text-align: left;
   background-color: #ece9e3;
   color: rgb(0, 0, 0);
+}
+
+.delete_button {
+  border-radius: 3px;
+  background-color: #9299a5;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 20px;
+  width: 50%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+#login_form{
+  width: 50%;
+  margin: 0 auto;
+}
+
+#signup_form{
+  width: 50%;
+  margin: 0 auto;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
 }
 
 /* quantity count */
