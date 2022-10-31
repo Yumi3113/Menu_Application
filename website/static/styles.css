@@ -198,14 +198,27 @@ text-align: center;
 }
 
 /* quantity count */
-#myform {
-  text-align: center;
-  margin: 1%;
+
+.counter {
+  height: 60px;
+  min-width: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
-.qty {
-  width: 40px;
-  height: 25px;
+
+.counter span{
+  width: 50%;
   text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+  cursor: pointer;
 }
-input.qtyplus { width:25px; height:25px;}
-input.qtyminus { width:25px; height:25px;}
+
+#num {
+  text-align: center;
+  width: 50px;
+}

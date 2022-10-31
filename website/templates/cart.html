@@ -38,19 +38,18 @@
                  </form> 
             </th>
             <th>
-                <form id='myform' method='POST' class='quantity' action='#'>
-                    <input type='button' value='-' class='qtyminus minus' field='quantity' />
-                    <input type='text' name='quantity' value='0' class='qty' />
-                    <input type='button' value='+' class='qtyplus plus' field='quantity' />
-                  </form>
+                  <div class="counter">
+                    <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                    <input id="num" type="text" value="1">
+                    <span class="up" onClick='increaseCount(event, this)'>+</span>
+                  </div>
             </th>
         </tr>
         {% set i = i + 1%}
         {% endfor %}
         {% endif %}
     </tbody>
-    <br>
-    <thead id="total">
+    <thead>
         <tr>
             <th>
             </th>
@@ -64,6 +63,25 @@
         </tr>
     </thead>
 </table>
+<script>
+    function increaseCount(a, b) {
+    var input = b.previousElementSibling;
+    var value = parseInt(input.value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    input.value = value;
+    }
+
+    function decreaseCount(a, b) {
+    var input = b.nextElementSibling;
+    var value = parseInt(input.value, 10);
+    if (value > 1) {
+        value = isNaN(value) ? 0 : value;
+        value--;
+        input.value = value;
+    }
+    }
+</script>
  <br>
 <a href="http://127.0.0.1:5000/">
 <button class="button"><span>Continue Shopping</span></button></a>
