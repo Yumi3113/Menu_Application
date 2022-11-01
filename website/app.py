@@ -155,17 +155,12 @@ def add_to_cart():
 @app.route("/delete", methods=["GET","POST"])
 def delete():
     if request.method =="POST":
-        print (session["cart"])
         id = request.form["id"]
         data = session["cart"]
         data.pop(int(id))
         session['cart'] = data
         #session["cart"].pop(int(id))
-        print (session["cart"])
-        print (id)
     return redirect('/cart')
 
-#adding a quantity count
-    
 if __name__ == '__main__':
     app.run(debug=True)
