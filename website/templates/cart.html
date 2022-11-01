@@ -27,7 +27,7 @@
                 <p>{{item[0]}}</p>
             </th>
             <th>
-                <p>${{item[1]}}</p>
+                <p class="price">${{item[1]}}</p>
             </th>
             <th>
                 <form action="/delete" method ="post">
@@ -65,11 +65,20 @@
 </table>
 <script>
     function increaseCount(a, b) {
+    var list = []
     var input = b.previousElementSibling;
     var value = parseInt(input.value, 10);
     value = isNaN(value) ? 0 : value;
     value++;
+    var prices = document.getElementsByClassName("price")
     input.value = value;
+    var total = parseInt(prices[0].innerHTML.substring(1)) * input.value
+    //parse through the items to get their prices as a total
+    for(let i = 0; i < prices.length; i++){
+        total =  total + (parseInt(prices[i].innerHTML.substring(1)))
+        list.push(parseInt(prices[i].innerHTML.substring(1)))
+        console.log(total)
+    }
     }
 
     function decreaseCount(a, b) {
