@@ -216,7 +216,7 @@ text-align: center;
   cursor: pointer;
 }
 
-#num {
+.num {
   text-align: center;
   width: 50px;
 }

@@ -27,7 +27,7 @@
                 <p>{{item[0]}}</p>
             </th>
             <th>
-                <p class="price">${{item[1]}}</p>
+                <p id ="{{ item[0]}}" class="price">${{item[1]}}</p>
             </th>
             <th>
                 <form action="/delete" method ="post">
@@ -40,8 +40,8 @@
             <th>
                   <div class="counter">
                     <span class="down" onClick='decreaseCount(event, this)'>-</span>
-                    <input id="num" type="text" value="1">
-                    <span class="up" onClick='increaseCount(event, this)'>+</span>
+                    <input class="num" id="{{ item[0] }}" type="text" value="1">
+                    <span class="up" onClick='increaseCount(event, this, {{ item[0] }})'>+</span>
                   </div>
             </th>
         </tr>
@@ -59,28 +59,33 @@
             </th>
             <th>
                 <p style="text-align:center;">Total:</p>
+                <P id="total">0</P>
             </th>
         </tr>
     </thead>
 </table>
 <script>
-    function increaseCount(a, b) {
+    function increaseCount(a, b,c) {
     var list = []
     var input = b.previousElementSibling;
     var value = parseInt(input.value, 10);
+    let total = 0
     value = isNaN(value) ? 0 : value;
     value++;
     var prices = document.getElementsByClassName("price")
+    console.log(c[0].id)
     input.value = value;
-    var total = parseInt(prices[0].innerHTML.substring(1)) * input.value
     //parse through the items to get their prices as a total
     for(let i = 0; i < prices.length; i++){
-        total =  total + (parseInt(prices[i].innerHTML.substring(1)))
-        list.push(parseInt(prices[i].innerHTML.substring(1)))
-        console.log(total)
+        if ( prices[i].id === "Fries" ){
+            total = total + 3
+        }
+        if( prices[i].id === "Burger" ){
+            total = total + 7
+        }
+    console.log(total)
     }
     }
-
     function decreaseCount(a, b) {
     var input = b.nextElementSibling;
     var value = parseInt(input.value, 10);
