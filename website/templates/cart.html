@@ -41,7 +41,7 @@
                   <div class="counter">
                     <span class="down" onClick='decreaseCount(event, this)'>-</span>
                     <input class="num" id="{{ item[0] }}" type="text" value="1">
-                    <span class="up" onClick='increaseCount(event, this, {{ item[0] }})'>+</span>
+                    <span class="up" onClick='increaseCount(event, this,)'>+</span>
                   </div>
             </th>
         </tr>
@@ -65,6 +65,7 @@
     </thead>
 </table>
 <script>
+// unfinished total count!
     function increaseCount(a, b,c) {
     var list = []
     var input = b.previousElementSibling;
@@ -72,18 +73,18 @@
     let total = 0
     value = isNaN(value) ? 0 : value;
     value++;
-    var prices = document.getElementsByClassName("price")
-    console.log(c[0].id)
+    // var prices = document.getElementsByClassName("price")
+    // console.log(c[0].id)
     input.value = value;
     //parse through the items to get their prices as a total
     for(let i = 0; i < prices.length; i++){
-        if ( prices[i].id === "Fries" ){
-            total = total + 3
-        }
-        if( prices[i].id === "Burger" ){
-            total = total + 7
-        }
-    console.log(total)
+    //     if ( prices[i].id === "Fries" ){
+    //         total = total + 3
+    //     }
+    //     if( prices[i].id === "Burger" ){
+    //         total = total + 7
+    //     }
+    // console.log(total)
     }
     }
     function decreaseCount(a, b) {
